@@ -1,0 +1,12 @@
+notebook==7.0.3
+ipywidgets
+torch==1.13.1
+torchvision==0.14.1
+diffusers==0.15.0
+transformers==4.29.1
+opencv-python
+spacy==3.6.0
+torchmetrics==0.11.4
+accelerate
+tqdm
+git+https://github.com/facebookresearch/segment-anything.git
