@@ -12,6 +12,7 @@ Artur Shagidanov*, Hayk Poghosyan*, Xinyu Gong*, Zhangyang Wang, Shant Navasardy
 
 
 ![Pipeline](./src/pipeline.png)
+
 We present Grounded-Instruct-Pix2Pix a robust framework designed for localized instruction-based image editing.
 It consists of 2 stages: 1) grounding mask extraction and 2) localized image editing.
 Grounding mask extraction step aims to detect the area-of-interest to which the editing process should be confined based on the user-provided editing instruction.
