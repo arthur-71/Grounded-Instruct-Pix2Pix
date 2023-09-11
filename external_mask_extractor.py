@@ -44,9 +44,8 @@ def join_bboxes(bboxes_xyxy):
 
 
 class ExternalMaskExtractor():
-    def __init__(self, device, clip_score_threshold=0., mask_dilation_size=11) -> None:
+    def __init__(self, device, clip_score_threshold=0.) -> None:
         self.device = device
-        self.mask_dilation_size = mask_dilation_size
 
         self.nlp = spacy.load("en_core_web_sm")
         self.clip_metric = CLIPScore(model_name_or_path="openai/clip-vit-large-patch14").to(device)
@@ -138,7 +137,7 @@ class ExternalMaskExtractor():
         return clip_scores
 
     @torch.no_grad()
-    def get_external_mask(self, image, prompt, exclude_noun_phrases=None, verbose=False):
+    def get_external_mask(self, image, prompt, mask_dilation_size=11, exclude_noun_phrases=None, verbose=False):
         # Extract all noun-phrases
         prompt_noun_phrases = self._get_noun_phrases(prompt, verbose=verbose)
         if len(prompt_noun_phrases) == 0:
@@ -161,7 +160,7 @@ class ExternalMaskExtractor():
         # Extract its mask
         external_mask = self._grounded_sam_predict(image, chosen_noun_phrase)
         external_mask = cv2.dilate(external_mask.data.cpu().numpy().astype(np.uint8),
-                                   kernel=(np.ones((self.mask_dilation_size, self.mask_dilation_size), np.uint8)))
+                                   kernel=(np.ones((mask_dilation_size, mask_dilation_size), np.uint8)))
         external_mask = Image.fromarray((255*external_mask).astype(np.uint8))
         if verbose:
             print(f'Chose "{chosen_noun_phrase}" as input to G-SAM.')
