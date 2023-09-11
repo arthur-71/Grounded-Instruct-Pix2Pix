@@ -3,7 +3,7 @@ ipywidgets
 torch==1.13.1
 torchvision==0.14.1
 diffusers==0.15.0
-transformers==4.29.1
+transformers==4.30.0
 opencv-python
 spacy==3.6.0
 torchmetrics==0.11.4
