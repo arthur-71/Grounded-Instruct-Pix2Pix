@@ -113,8 +113,8 @@ by shifting the latent blending interval towards earlier denoising steps:
 
 ```
 text_guidance_scale     = 5.0
-start_blending_at_tstep = 100
-end_blending_at_tstep   = 1
+start_blending_at_tstep = 300
+end_blending_at_tstep   = 200
 ```
 
 ![bunny](./src/bunny.png)
