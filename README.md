@@ -118,18 +118,3 @@ end_blending_at_tstep   = 200
 ```
 
 ![bunny](./src/bunny.png)
-
-
-# Citation
-
----
-```
-@misc{artursh2023grounded,
-      title={Grounded-Instruct-Pix2Pix: Improving Instruction Based Image Editing with Automatic Target Grounding}, 
-      author={Qian Wang and Biao Zhang and Michael Birsak and Zhangyang Wang and Shant Navasardyan and Humphrey Shi},
-      year={2023},
-      eprint={None},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
-```
