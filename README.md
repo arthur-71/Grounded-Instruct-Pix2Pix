@@ -25,6 +25,21 @@ It is employed only during the last ~10% of the denoising steps, to allow Instuc
 Our method incurs little overhead and does not require any additional inputs from the user.
 Please refer to the figure above for the detailed pipeline.
 
+## Metrics
+
+---
+
+We present the metrics table on our evaluation dataset. 
+This is idemtical to the Table 2 presented int the paper, except we added standard deviations in parenthesises for each cell.
+
+Metric/Method | IP2P | DiffEdit | InstructEdit | Grounded-IP2P
+--- | --- | --- | --- | --- 
+LPIPS↓ | 0.1873 (0.102) | 0.1054 (0.045) | 0.1064 (0.042) | 0.1021 (0.055)
+CLIP-Score↑ | 24.314 (4.193) | 23.255 (3.656) | 19.306 (4.167) | 25.144 (4.083)
+
+*IP2P stands for Instruct-Pix2Pix.
+
+
 
 ## Installation
 
